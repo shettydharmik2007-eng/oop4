@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Sensor Alerts</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Real-Time Sensor Monitoring</h1>
+
+        <p>
+            Click the button to process sensor data.
+        </p>
+
+        <button id="processSensors">
+            Process Sensor Data
+        </button>
+
+        <div id="sensorResult"></div>
+
+    </div>
+
+<!-- QUESTION 2 -->
+
+<section class="card">
+
+    <h2>2. Intelligent Node Status</h2>
+
+    <div id="dashboard">
+
+        <div class="node online"
+             data-node="Node-01"
+             data-status="online">
+            Node 01 - Online
+        </div>
+
+        <div class="node offline"
+             data-node="Node-02"
+             data-status="offline">
+            Node 02 - Offline
+        </div>
+
+        <div class="node online"
+             data-node="Node-03"
+             data-status="online">
+            Node 03 - Online
+        </div>
+
+        <div class="node offline"
+             data-node="Node-04"
+             data-status="offline">
+            Node 04 - Offline
+        </div>
+
+    </div>
+
+    <button id="scanNodes">
+        Scan Offline Nodes
+    </button>
+
+    <p id="nodeResult"></p>
+
+</section>
+    <!-- QUESTION 3 -->
+
+<section class="card">
+
+    <h2>3. Event Flow in Interactive Chart</h2>
+
+    <div id="chartArea">
+
+        <div id="chartBox">
+
+            <button id="dataPoint">
+                Click Data Point
+            </button>
+
+        </div>
+
+    </div>
+
+    <p id="eventResult">
+        Click the data point to observe event flow.
+    </p>
+
+</section>
+    <!-- QUESTION 4 -->
+
+<section class="card">
+
+    <h2>4. Collapsible Section and Dynamic Tooltip</h2>
+
+    <button id="toggleSection">
+        Show / Hide Details
+    </button>
+
+    <div id="detailsSection">
+
+        <h3>Intelligent Sensor Details</h3>
+
+        <p>
+            This section contains information about the
+            intelligent sensor monitoring system.
+        </p>
+
+        <button id="tooltipButton">
+            Move Mouse Over Me
+        </button>
+
+    </div>
+
+    <p id="tooltipInfo"></p>
+
+</section>
+    <!-- QUESTION 5 -->
+
+<section class="card">
+
+    <h2>5. Asynchronous JSON Data Update</h2>
+
+    <p>
+        Simulate an asynchronous HTTP response from
+        the intelligent backend.
+    </p>
+
+    <button id="loadData" type="button">
+        Load Backend Data
+    </button>
+
+    <div id="loadingMessage"></div>
+
+    <div id="backendResult"></div>
+
+    <div id="errorMessage"></div>
+
+</section>
+
+<script>
+/* =====================================================
+   QUESTION 5
+   Asynchronous JSON Data Update
+   ===================================================== */
+
+document.getElementById("loadData").addEventListener("click", function () {
+
+    const loading = document.getElementById("loadingMessage");
+    const result = document.getElementById("backendResult");
+    const error = document.getElementById("errorMessage");
+
+    // Clear old data
+    result.innerHTML = "";
+    error.innerHTML = "";
+
+    // Show loading message
+    loading.innerHTML =
+        "Loading data from intelligent backend...";
+
+    // Simulate asynchronous backend response
+    setTimeout(function () {
+
+        try {
+
+            // Simulated HTTP JSON response
+            const response = '{"status":"success","sensor":"Temperature Sensor","value":82,"unit":"°C","threshold":75,"message":"Critical temperature detected"}';
+
+            // Parse JSON
+            const data = JSON.parse(response);
+
+            // Check response
+            if (data.status !== "success") {
+                throw new Error("Backend response failed.");
+            }
+
+            // Display response
+            result.innerHTML =
+                "<h3>Backend Response</h3>" +
+                "<p><strong>Sensor:</strong> " +
+                data.sensor + "</p>" +
+
+                "<p><strong>Current Value:</strong> " +
+                data.value + " " + data.unit + "</p>" +
+
+                "<p><strong>Threshold:</strong> " +
+                data.threshold + " " + data.unit + "</p>" +
+
+                "<p><strong>Status:</strong> " +
+                data.status + "</p>" +
+
+                "<p><strong>Message:</strong> " +
+                data.message + "</p>";
+
+            loading.innerHTML =
+                "Data received successfully.";
+
+        }
+
+        catch (err) {
+
+            loading.innerHTML = "";
+
+            error.innerHTML =
+                "Error: " + err.message;
+
+        }
+
+    }, 1500);
+
+});
+</script>
+
+<script src="script.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

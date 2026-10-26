@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf4ff;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+    text-align: center;
+}
+
+h1 {
+    color: #2457a6;
+}
+
+button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2865c7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
+th {
+    background-color: #2457a6;
+    color: white;
+}
+
+.alert {
+    background-color: #ffe0e0;
+}
+/* QUESTION 2 */
+
+#dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.node {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #d8f5dc;
+    border: 2px solid #4caf50;
+}
+
+.node.warning {
+    background-color: #fff0b3;
+    border: 3px solid orange;
+    color: #8a4b00;
+    font-weight: bold;
+}
+/* =====================================================
+   QUESTION 3
+   Event Flow
+   ===================================================== */
+
+#chartArea {
+    background-color: #e3f2fd;
+    border: 3px solid #1976d2;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#chartBox {
+    background-color: #bbdefb;
+    border: 3px solid #1565c0;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#dataPoint {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#dataPoint:hover {
+    background-color: #0d47a1;
+}
+
+#eventResult {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    font-weight: bold;
+}
+/* =====================================================
+   QUESTION 4
+   Collapsible Section and Dynamic Tooltip
+   ===================================================== */
+
+/* Q4 Collapsible Section */
+
+#detailsSection {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f3f8ff;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+}
+
+#detailsSection h3 {
+    color: #2457a6;
+    margin-top: 0;
+}
+
+#detailsSection p {
+    line-height: 1.6;
+}
+
+
+/* Q4 Buttons */
+
+#toggleSection,
+#tooltipButton {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#toggleSection:hover,
+#tooltipButton:hover {
+    background-color: #2865c7;
+}
+
+
+/* Dynamic Tooltip */
+
+#dynamicTooltip {
+    position: fixed;
+    display: none;
+    background-color: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+#tooltipInfo {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #2457a6;
+}
+/* =====================================================
+   QUESTION 5
+   Asynchronous JSON Data Update
+   ===================================================== */
+
+#loadingMessage {
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bold;
+    color: #2457a6;
+}
+
+#backendResult {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+}
+
+#backendResult h3 {
+    margin-top: 0;
+    color: #2e7d32;
+}
+
+#backendResult p {
+    margin: 8px 0;
+}
+
+#errorMessage {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffebee;
+    border: 2px solid #e53935;
+    color: #b71c1c;
+    border-radius: 8px;
+}
+
+#loadData {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#loadData:hover {
+    background-color: #2865c7;
+}
+
+#loadData:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
